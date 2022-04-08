@@ -2,7 +2,7 @@
 ## description 
 
 ##wire-frame
-![Screen Shot 2022-04-07 at 9 18 24 PM](https://user-images.githubusercontent.com/98351351/162364420-764c2638-206f-4f02-a649-95543b35d8e9.png)
+![Screen Shot 2022-04-07 at 11 00 32 PM](https://user-images.githubusercontent.com/98351351/162374039-48d667c0-2e45-4e6e-a55c-4c617d2f5e6d.png)
 
 
 ##Mock Up
