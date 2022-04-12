@@ -2,3 +2,21 @@
     margin: 0;
     padding: 0;
 }
+.title {
+    background-image: linear-gradient(to right, rgb(183, 183, 254), rgb(72, 63, 243));
+    color: aliceblue;
+    margin: 0;
+    width: 100%;
+}
+.searchBTN {
+    background-color: rgba(61, 177, 245, 0.731);
+    color: white;
+}
+.cityBTN {
+    background-color: rgb(198, 197, 197);
+    color: black;
+}
+.uvBTN {
+    background-color: rgb(1, 152, 1);
+    color: white;
+}

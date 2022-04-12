@@ -11,58 +11,123 @@
 <body>
 <header>
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4 d-flex justify-content-center"><strong>Weather Dashboard</strong></h1>
+        <div class="container d-flex flex-fill">
+          <h1 class="display-2 d-flex justify-content-center title"><strong>Weather Dashboard</strong></h1>
         </div>
     </div>
 </header>
-<aside>
-    <form>
-        <div class="form-row">
-        <div class="col-2">
-                <h3><strong>Search for a City: </strong></h3>
-                <input type="text" class="form-control" placeholder="City">
-                <br>
-                <button type="button" class="btn btn-primary btn-lg btn-block col-12">Search</button>
-                <div class="dropdown-divider"></div>
+<!--             header                   -->
+<div class="contentcontainer">
+<div class="row">
+    <aside>
+        <form>
+            <div class="form-row col-sm-10">
+                <div class="col-2">
+                    <h3><strong>Search for a City: </strong></h3>
+                    <input type="text" class="form-control" placeholder="City">
+                    <br>
+                    <button type="button" class="btn searchBTN btn-lg btn-block col-12" id = "search">Search</button>
+                    <div class="dropdown-divider"></div>
+                </div>
+                <!-- <div class="btn-group-vertical col-2">
+                    <button type="button" class="btn cityBTN btn-lg btn-block" id = "Austin">Austin</button>
+                    <br>
+                    <button type="button" class="btn cityBTN btn-lg btn-block" id="Chicago">Chicago</button>
+                    <br>
+                    <button type="button" class="btn cityBTN btn-lg btn-block">New York</button>
+                    <br>
+                    <button type="button" class="btn cityBTN btn-lg btn-block">Orlando</button>
+                    <br>
+                    <button type="button" class="btn cityBTN btn-lg btn-block">San Francisco</button>
+                    <br>
+                    <button type="button" class="btn cityBTN btn-lg btn-block">Seattle</button>
+                    <br>
+                    <button type="button" class="btn cityBTN btn-lg btn-block">Denver</button>
+                    <br>
+                    <button type="button" class="btn cityBTN btn-lg btn-block">Atlanta</button>
+                </div> -->
             </div>
-            <div class="btn-group-vertical col-2">
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Austin</button>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Chicago</button>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">New York</button>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Orlando</button>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">San Francisco</button>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Seattle</button>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Denver</button>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Atlanta</button>
+        </form>
+    </aside>
+    <div class="container">
+    <div class="row row cols-3">
+    <main class="d-flex justify-content-end">
+        <div class="card col-sm-10 d-flex float-right">
+             <h5 class="card-header"><strong>City(Date) </strong>icon</h5>
+            <div class="card-body">
+              <p class="card-text" id="temp">Temp: </p>
+              <p class="card-text" id="wind">Wind: </p>
+              <p class="card-text" id="humid">Humidity: </p>
+              <p class="card-text" id="uv">UV Index: </p><a href="#" class="btn uvBTN" id="uvBTN">0.47</a>
             </div>
+          </div>
+        </main>
+    <section>
+        <div class= "d-flex justify-content-end">
+        <div class="row d-flex justify-content-end">
+        <h3><strong>5-Day Forecast: </strong><span id="weather-results"></span></h3>
+        <div class="card col-2" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Date</strong></h5>
+              <p class="weathermoji">emoji</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Temp: </li>
+              <li class="list-group-item">Temp: </li>
+              <li class="list-group-item">Temp: </li>
+            </ul>
+          </div>
+          <div class="card col-2" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Date</strong></h5>
+              <p class="weathermoji">emoji</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temp</li>
+            </ul>
+          </div>
+          <div class="card col-2" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Date</strong></h5>
+              <p class="weathermoji">emoji</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temp</li>
+            </ul>
+          </div>
+          <div class="card col-2" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Date</strong></h5>
+              <p class="weathermoji">emoji</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temo</li>
+            </ul>
+          </div>
+          <div class="card col-2" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Date</strong></h5>
+              <p class="weathermoji">emoji</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temp</li>
+              <li class="list-group-item">Temo</li>
+            </ul>
+          </div>
         </div>
-    </form>
-</aside>
-<main>
-    <div class="card col-sm-6 d-flex float-right">
-         <h5 class="card-header"><strong>City </strong>icon</h5>
-        <div class="card-body">
-          <h5 class="card-title"id="date">Date</h5>
-          <p class="card-text">Temp: </p>
-          <p class="card-text">Wind: </p>
-          <p class="card-text">Humidity: </p>
-          <p class="card-text">UV Index: </p><a href="#" class="btn btn-primary">6.47</a>
-        </div>
-      </div>
-    </main>
-
-
-
-
-
+    </div>
+ </section>
+ </div>
+ </div>
+ </div>
+</div>
     <script src = "script.js"></script>
 </body>
 </html>
