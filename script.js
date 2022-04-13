@@ -10,14 +10,20 @@ console.log("hello world")
         //add an element of the city name
 // 3. view UV index 
         // if-else statement of uv index colors 
+        
+        // WORKSPACE
+        // original API link and web query
+        // var APIkey = "23c7703d45af428f792316b5fd0b2f4f";
+        // var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+        var searchFormEl = document.getElementById('#search-area')
+        var searchid = document.getElementById('#search')
 
-// WORKSPACE
-// original API link and web query
-// var APIkey = "23c7703d45af428f792316b5fd0b2f4f";
-// var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
 
-var searchid = document.getElementById('#search')
-// getting the search to intake the city 
+
+
+        
+        searchFormEl.addEventListener('submit', searcharea);
+        // getting the search to intake the city 
 var searcharea = function (event) {
     event.preventDefault();
     var search = searchid.value.trim();
@@ -32,7 +38,7 @@ var searcharea = function (event) {
 
 // getting the search ID API
 var getCitySearch = function (search) {
-    var search = "Colorado";
+    var search = " ";
     // search API
     var searchapi = 'http://api.openweathermap.org/data/2.5/weather?q=' + search + '&appid=23c7703d45af428f792316b5fd0b2f4f';
     fetch(searchapi)
@@ -62,8 +68,12 @@ var displayweather = function (list, weatherresults) {
         var uvindexresults = list[i].main.temp_kf;
         var iconresults = list[i].weather.icon;
         // if moment() is === to the dateresults then textContent the results I want to the correct name
+        console.log(maintempResults)
+        console.log(cityresults)
+        console.log(dateresults)
+        console.log(humidityresults)
+        console.log(uvindexresults)
+        console.log(iconresults)
     }
 }
 // getCitySearch();
-
-searchid.addEventListener('#submit', searcharea);
