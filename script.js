@@ -15,43 +15,42 @@ console.log("hello world")
         // original API link and web query
         // var APIkey = "23c7703d45af428f792316b5fd0b2f4f";
         // var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
-        var searchFormEl = document.getElementById('#search-area')
-        var searchid = document.getElementById('#search')
+        var searchFormEl = document.getElementById('search-area')
+        var searchid = document.getElementById('search')
+        var fiveday = document.getElementById('5dayweathercontainer')
 
-
-
-
-        
-        searchFormEl.addEventListener('submit', searcharea);
         // getting the search to intake the city 
 var searcharea = function (event) {
     event.preventDefault();
-    var search = searchid.value.trim();
-
-    if (search) {
-        getCitySearch (search);
-        // make container for each area 
-    } else {
-        alert ("please use a proper city name");
-    }
+        var search = searchid.value.trim();
+        if (search) {
+            getCitySearch (search);
+    // make container for each area 
+            searchid.value = '';
+        } else {
+            alert ("please use a proper city name");
+      }
 };
 
 // getting the search ID API
 var getCitySearch = function (search) {
-    var search = " ";
-    // search API
     var searchapi = 'http://api.openweathermap.org/data/2.5/weather?q=' + search + '&appid=23c7703d45af428f792316b5fd0b2f4f';
+
     fetch(searchapi)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    // displayWeather(data);
-                    console.log(data)
-                }); 
-            }else {
-                alert('Error: ' + response.statusText);
-            }
-        });
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                displayweather(data, search);
+                console.log(data)
+            }); 
+        }else {
+            alert('Error: ' + response.statusText);
+        }
+    })
+    .catch (function (error){
+        alert('Unable to connect to Weather website');
+    });
+    
 };
 
 // display weather of the main big one and 5 small ones 
@@ -59,7 +58,6 @@ var displayweather = function (list, weatherresults) {
     if (list.length === 0) {
         alert('There is no weather to be found');
     }
-
     for (var i = 0; i < list.length; i++) {
         var maintempResults = list[i].main.temp;
         var cityresults = list[i].city.name;
@@ -77,3 +75,4 @@ var displayweather = function (list, weatherresults) {
     }
 }
 // getCitySearch();
+searchid.addEventListener('click', getCitySearch);
