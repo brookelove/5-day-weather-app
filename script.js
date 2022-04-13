@@ -15,18 +15,18 @@ console.log("hello world")
         // original API link and web query
         // var APIkey = "23c7703d45af428f792316b5fd0b2f4f";
         // var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
-        var searchFormEl = document.getElementById('search-area')
-        var searchid = document.getElementById('search')
-        var fiveday = document.getElementById('5dayweathercontainer')
+var searchFormEl = document.getElementById('search-area')
+var searchBTN = document.getElementById('search')
+var fiveday = document.getElementById('5dayweathercontainer')
 
         // getting the search to intake the city 
 var searcharea = function (event) {
     event.preventDefault();
-        var search = searchid.value.trim();
+        var search = searchFormEl.value.trim();
         if (search) {
-            getCitySearch (search);
+            getCitySearch(search);
     // make container for each area 
-            searchid.value = '';
+            searchFormEl.value = '';
         } else {
             alert ("please use a proper city name");
       }
@@ -39,18 +39,18 @@ var getCitySearch = function (search) {
     fetch(searchapi)
     .then(function (response) {
         if (response.ok) {
-            response.json().then(function (data) {
-                displayweather(data, search);
+            return response.json()
+    .then(function (data) {
+                // displayweather(data, search);
                 console.log(data)
             }); 
-        }else {
+        } else {
             alert('Error: ' + response.statusText);
         }
     })
-    .catch (function (error){
-        alert('Unable to connect to Weather website');
-    });
-    
+    // .catch (function (error){
+    //     alert('Unable to connect to Weather website');
+    // });
 };
 
 // display weather of the main big one and 5 small ones 
@@ -58,7 +58,6 @@ var displayweather = function (list, weatherresults) {
     if (list.length === 0) {
         alert('There is no weather to be found');
     }
-    for (var i = 0; i < list.length; i++) {
         var maintempResults = list[i].main.temp;
         var cityresults = list[i].city.name;
         var dateresults = list[i].dt_text;
@@ -72,7 +71,7 @@ var displayweather = function (list, weatherresults) {
         console.log(humidityresults)
         console.log(uvindexresults)
         console.log(iconresults)
-    }
+
 }
 // getCitySearch();
-searchid.addEventListener('click', getCitySearch);
+searchBTN.addEventListener('click', searcharea);
