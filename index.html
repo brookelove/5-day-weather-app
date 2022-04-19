@@ -10,12 +10,9 @@
 </head>
 <body>
 <header>
-    <div class="jumbotron jumbotron-fluid" style = "width: 100%;">
-        <div class="container d-flex flex-fill">
+    <header style = "width: 100%;">
           <h1 class="display-2 d-flex justify-content-center title"><strong>Weather Dashboard</strong></h1>
-        </div>
-    </div>
-</header>
+    </header>
 <!--             header                   -->
 <div class="container-fluid" style="width: 100%">
 <div class="row">
@@ -52,76 +49,75 @@
         </form>
     </section>
     <!-- <div class="container"> -->
-    <div class="col-md">
-    <!-- <main class="d-flex justify-content-end"> -->
-        <div class="card col-sm-10 d-flex float-right">
-             <h5 class="card-header" id="cityanddate"><strong>City(Date) </strong>icon</h5>
+    <div class="col gap-3">
+        <div class="card d-flex float-right p-2">
+             <h5 class="card-header" id="cityanddate"><strong>City(Date) </strong><i id="currenticon"></i></h5>
             <div class="card-body">
-              <p class="card-text" id="temp">Temp: </p>
-              <p class="card-text" id="wind">Wind: </p>
-              <p class="card-text" id="humid">Humidity: </p>
-              <p class="card-text" id="uv">UV Index: </p><a href="#" class="btn uvBTN" id="uvBTN">0.47</a>
+              <p class="card-text" id="currenttemp">Temp: </p>
+              <p class="card-text" id="currentwind">Wind: </p>
+              <p class="card-text" id="currenthumidity">Humidity: </p>
+              <p class="card-text" id="currentuvi">UV Index: </p>
             </div>
           <!-- </div> -->
         <!-- </main> -->
         <div class="row">
     <section>
-        <div class= "d-flex justify-content-end" id="5dayweathercontainer">
-        <div class="row d-flex justify-content-end">
+        <div class= "d-flex justify-content-end p-2" id="5dayweathercontainer">
+        <div class="row">
         <h3><strong>5-Day Forecast: </strong><span id="weather-results"></span></h3>
-        <div class="card col-2" style="width: 18rem;">
+        <div class="card col" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><strong>Date</strong></h5>
-              <p class="weathermoji">emoji</p>
+              <h5 class="card-title-1" id="date1"><strong>Date</strong></h5>
+              <p class="weathermoji-1">emoji</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Temp: </li>
-              <li class="list-group-item">Temp: </li>
-              <li class="list-group-item">Temp: </li>
+              <li class="list-group-item" id="temp1">Temp: </li>
+              <li class="list-group-item" id="wind1">Wind: </li>
+              <li class="list-group-item" id="humid1">Humidity: </li>
             </ul>
           </div>
-          <div class="card col-2" style="width: 18rem;">
+          <div class="card col" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><strong>Date</strong></h5>
-              <p class="weathermoji">emoji</p>
+              <h5 class="card-title" id="date2"><strong>Date</strong></h5>
+              <p class="weathermoji-2">emoji</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temp</li>
+              <li class="list-group-item" id="temp2">Temp:</li>
+              <li class="list-group-item" id="wind2">Wind:</li>
+              <li class="list-group-item" id="humid2">Humidity:</li>
             </ul>
           </div>
-          <div class="card col-2" style="width: 18rem;">
+          <div class="card col" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><strong>Date</strong></h5>
-              <p class="weathermoji">emoji</p>
+              <h5 class="card-title" id="date3"><strong>Date</strong></h5>
+              <p class="weathermoji-3">emoji</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temp</li>
+              <li class="list-group-item" id="temp3">Temp:</li>
+              <li class="list-group-item" id="wind3">Wind:</li>
+              <li class="list-group-item" id="humid3">Humidity:</li>
             </ul>
           </div>
-          <div class="card col-2" style="width: 18rem;">
+          <div class="card col" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><strong>Date</strong></h5>
-              <p class="weathermoji">emoji</p>
+              <h5 class="card-title" id="date4"><strong>Date</strong></h5>
+              <p class="weathermoji-4">emoji</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temo</li>
+              <li class="list-group-item" id="temp4">Temp:</li>
+              <li class="list-group-item" id="wind4">Wind:</li>
+              <li class="list-group-item" id="humid4">Humidity:</li>
             </ul>
           </div>
-          <div class="card col-2" style="width: 18rem;">
+          <div class="card col" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><strong>Date</strong></h5>
-              <p class="weathermoji">emoji</p>
+              <h5 class="card-title" id="date5"><strong>Date</strong></h5>
+              <p class="weathermoji-5">emoji</p>
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temp</li>
-              <li class="list-group-item">Temo</li>
+              <li class="list-group-item" id="temp5">Temp</li>
+              <li class="list-group-item" id="wind5">Wind:</li>
+              <li class="list-group-item" id="humid5">Humidity:</li>
             </ul>
           </div>
         </div>

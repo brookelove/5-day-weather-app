@@ -41,7 +41,7 @@ var getCitySearch = function (search) {
     .then(function (response) {
         if (response.ok) {
             console.log("response 1")
-            console.log(response)
+            // console.log(response)
             return response.json()
     .then(function (data) {
     var citylatlon = JSON.parse(localStorage.getItem('search')) || []
@@ -51,13 +51,31 @@ var getCitySearch = function (search) {
     fetch(latlonapi)
         .then(function (response2){
             console.log("response 2")
-            console.log(response2)
+            // console.log(response2)
             return response2.json();
         })
         .then (function(weatherdisplay){
             console.log(weatherdisplay)
+// big card on top =================================================================
             var city = document.getElementById('cityanddate')
             city.textContent = data.name
+            var currenttemp = document.getElementById('currenttemp')
+            currenttemp.textContent = "Temp: " + data.main.temp + " °C"
+            var currentwind = document.getElementById('currentwind')
+            currentwind.textContent =  "Wind: " + data.wind.gust + " MPH"
+            var currenthumidity = document.getElementById('currenthumidity')
+            currenthumidity.textContent = "Humidity: " + data.main.humidity + " %"
+            var uvi = document.getElementById('currentuvi')
+            var uvi = weatherdisplay.current.uvi + "got it!"
+            console.log(uvi)
+
+
+
+// 5 day forcast ====================================================================
+// figure out how to get the icons to display
+            var day1 = document.getElementById('weathermoji-1')
+            var day1 = weatherdisplay.daily[0].weather[0].icon
+            console.log(day1)
         })
                 // displayweather(data, search);
                 console.log(data)
