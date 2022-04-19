@@ -3,7 +3,7 @@
     padding: 0;
 }
 .title {
-    background-image: linear-gradient(to right, rgb(183, 183, 254), rgb(72, 63, 243));
+    background-image: linear-gradient(to right, rgb(146, 181, 245), rgb(35, 73, 243));
     color: aliceblue;
     margin: 0;
     width: 100%;
@@ -19,4 +19,24 @@
 .uvBTN {
     background-color: rgb(255, 255, 255);
     color: black;
+}
+.green {
+    background-color: green;
+    color: white;
+}
+.yellow {
+    background-color: yellow;
+    color: black;
+}
+.orange {
+    background-color: orange;
+    color: white;
+}
+.red {
+    background-color: red;
+    color: white;
+}
+.purple {
+    background-color: purple;
+    color: white;
 }
