@@ -66,10 +66,11 @@ var getCitySearch = function (search) {
             var currenthumidity = document.getElementById('currenthumidity')
             currenthumidity.textContent = "Humidity: " + data.main.humidity + " %"
             var uvi = document.getElementById('currentuvi')
-            var uvi = weatherdisplay.current.uvi + "got it!"
-            console.log(uvi)
-
-
+            var uvi = document.getElementById('currentuvi')
+            uvi.textContent = "UV-Index: " + weatherdisplay.current.uvi
+            var currenticon = document.getElementById('currenticon')
+            currenticon = data.weather[0].main
+            console.log(currenticon)
 
 // 5 day forcast ====================================================================
 // figure out how to get the icons to display
