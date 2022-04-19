@@ -29,18 +29,36 @@ var searcharea = function (event) {
             searchFormEl.value = '';
         } else {
             alert ("please use a proper city name");
-      }
+        }
+
 };
 
 // getting the search ID API
 var getCitySearch = function (search) {
     var searchapi = 'http://api.openweathermap.org/data/2.5/weather?q=' + search + '&appid=23c7703d45af428f792316b5fd0b2f4f';
-
+    // console.log(searchapi)
     fetch(searchapi)
     .then(function (response) {
         if (response.ok) {
+            console.log("response 1")
+            console.log(response)
             return response.json()
     .then(function (data) {
+    var citylatlon = JSON.parse(localStorage.getItem('search')) || []
+        citylatlon.push(data.name);
+        // console.log(data)
+    var latlonapi = 'http://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon + '&appid=23c7703d45af428f792316b5fd0b2f4f';
+    fetch(latlonapi)
+        .then(function (response2){
+            console.log("response 2")
+            console.log(response2)
+            return response2.json();
+        })
+        .then (function(weatherdisplay){
+            console.log(weatherdisplay)
+            var city = document.getElementById('cityanddate')
+            city.textContent = data.name
+        })
                 // displayweather(data, search);
                 console.log(data)
             }); 
@@ -54,24 +72,24 @@ var getCitySearch = function (search) {
 };
 
 // display weather of the main big one and 5 small ones 
-var displayweather = function (list, weatherresults) {
-    if (list.length === 0) {
-        alert('There is no weather to be found');
-    }
-        var maintempResults = list[i].main.temp;
-        var cityresults = list[i].city.name;
-        var dateresults = list[i].dt_text;
-        var humidityresults = list[i].main.humidity;
-        var uvindexresults = list[i].main.temp_kf;
-        var iconresults = list[i].weather.icon;
-        // if moment() is === to the dateresults then textContent the results I want to the correct name
-        console.log(maintempResults)
-        console.log(cityresults)
-        console.log(dateresults)
-        console.log(humidityresults)
-        console.log(uvindexresults)
-        console.log(iconresults)
+// var displayweather = function (list, weatherresults) {
+//     if (list.length === 0) {
+//         alert('There is no weather to be found');
+//     }
+//         var maintempResults = data.main.temp;
+//         var cityresults = data.main.name;
+//         var dateresults = list[i].dt_text;
+//         var humidityresults = main.humidity;
+//         var uvindexresults = list[i].main.temp_kf;
+//         var iconresults = list[i].weather.icon;
+//         // if moment() is === to the dateresults then textContent the results I want to the correct name
+//         console.log(maintempResults)
+//         console.log(cityresults)
+//         console.log(dateresults)
+//         console.log(humidityresults)
+//         console.log(uvindexresults)
+//         console.log(iconresults)
 
-}
+// }
 // getCitySearch();
 searchBTN.addEventListener('click', searcharea);
