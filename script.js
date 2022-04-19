@@ -73,9 +73,43 @@ var getCitySearch = function (search) {
 
 // 5 day forcast ====================================================================
 // figure out how to get the icons to display
-            var day1 = document.getElementById('weathermoji-1')
-            var day1 = weatherdisplay.daily[0].weather[0].icon
-            console.log(day1)
+            // var emoji1 = document.getElementById('weathermoji-1')
+            // emoji1.textContent = weatherdisplay.daily[0].weather[0].icon
+        //DAY 01
+        var temp1 = document.getElementById('temp1')
+        temp1.textContent = "Temp: " + weatherdisplay.daily[0].temp.day + " °C"
+        var wind1 = document.getElementById('wind1')
+        wind1.textContent = "Wind: " + weatherdisplay.daily[0].wind_gust + " MPH"
+        var humid1 = document.getElementById('humid1')
+        humid1.textContent = "Hmidity: " + weatherdisplay.daily[0].humidity + " %"
+         //DAY 02
+        var temp2 = document.getElementById('temp2')
+        temp2.textContent = "Temp: " + weatherdisplay.daily[1].temp.day + " °C"
+        var wind2 = document.getElementById('wind2')
+        wind2.textContent = "Wind: " + weatherdisplay.daily[1].wind_gust + " MPH"
+        var humid2 = document.getElementById('humid2')
+        humid2.textContent = "Hmidity: " + weatherdisplay.daily[1].humidity + " %"
+        //DAY 03
+        var temp3 = document.getElementById('temp3')
+        temp3.textContent = "Temp: " + weatherdisplay.daily[2].temp.day + " °C"
+        var wind3 = document.getElementById('wind3')
+        wind3.textContent = "Wind: " + weatherdisplay.daily[2].wind_gust + " MPH"
+        var humid3 = document.getElementById('humid3')
+        humid3.textContent = "Hmidity: " + weatherdisplay.daily[2].humidity + " %"
+        //DAY 04
+        var temp4 = document.getElementById('temp4')
+        temp4.textContent = "Temp: " + weatherdisplay.daily[3].temp.day + " °C"
+        var wind4 = document.getElementById('wind4')
+        wind4.textContent = "Wind: " + weatherdisplay.daily[3].wind_gust + " MPH"
+        var humid4 = document.getElementById('humid4')
+        humid4.textContent = "Hmidity: " + weatherdisplay.daily[3].humidity + " %"
+        //DAY 05
+        var temp5 = document.getElementById('temp5')
+        temp5.textContent = "Temp: " + weatherdisplay.daily[4].temp.day + " °C"
+        var wind5 = document.getElementById('wind5')
+        wind5.textContent = "Wind: " + weatherdisplay.daily[4].wind_gust + " MPH"
+        var humid5 = document.getElementById('humid5')
+        humid5.textContent = "Hmidity: " + weatherdisplay.daily[4].humidity + " %"
         })
                 // displayweather(data, search);
                 console.log(data)

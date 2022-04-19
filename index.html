@@ -10,11 +10,11 @@
 </head>
 <body>
 <header>
-    <header style = "width: 100%;">
+    <header class="mb-3">
           <h1 class="display-2 d-flex justify-content-center title"><strong>Weather Dashboard</strong></h1>
     </header>
 <!--             header                   -->
-<div class="container-fluid" style="width: 100%">
+<div class="container-fluid">
 <div class="row">
     <section class="col-md-3">
         <form>
@@ -27,30 +27,11 @@
                     <button type="submit" class="btn searchBTN btn-lg btn-block col-12" id = "search">Search</button>
                     </form>
                     <div class="dropdown-divider"></div>
-                <!-- </div> -->
-                <!-- <div class="btn-group-vertical col-2">
-                    <button type="button" class="btn cityBTN btn-lg btn-block" id = "Austin">Austin</button>
-                    <br>
-                    <button type="button" class="btn cityBTN btn-lg btn-block" id="Chicago">Chicago</button>
-                    <br>
-                    <button type="button" class="btn cityBTN btn-lg btn-block">New York</button>
-                    <br>
-                    <button type="button" class="btn cityBTN btn-lg btn-block">Orlando</button>
-                    <br>
-                    <button type="button" class="btn cityBTN btn-lg btn-block">San Francisco</button>
-                    <br>
-                    <button type="button" class="btn cityBTN btn-lg btn-block">Seattle</button>
-                    <br>
-                    <button type="button" class="btn cityBTN btn-lg btn-block">Denver</button>
-                    <br>
-                    <button type="button" class="btn cityBTN btn-lg btn-block">Atlanta</button>
-                </div> -->
-
         </form>
     </section>
     <!-- <div class="container"> -->
     <div class="col gap-3">
-        <div class="card d-flex float-right p-2">
+        <div class="border border-dark border border-2">
              <h5 class="card-header" id="cityanddate"><strong>City(Date) </strong><i id="currenticon"></i></h5>
             <div class="card-body">
               <p class="card-text" id="currenttemp">Temp: </p>
@@ -58,6 +39,7 @@
               <p class="card-text" id="currenthumidity">Humidity: </p>
               <p class="card-text" id="currentuvi">UV Index: </p>
             </div>
+        </div>
           <!-- </div> -->
         <!-- </main> -->
         <div class="row">
@@ -124,7 +106,7 @@
     </div>
  </section>
 </div>
- </div>
+
  </div>
  </div>
 </div>
