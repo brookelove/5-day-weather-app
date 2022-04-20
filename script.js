@@ -190,5 +190,9 @@ var getCitySearch = function (search) {
 };
 
 // getCitySearch();
-searchBTN.addEventListener('click', searcharea);
+searchBTN.addEventListener('click', searcharea ) 
+// {
+//     document.getElementById('innerbutton')
+//     innerbutton += "<button>" + city "</button>"
+// };
 // make it on click add a button with the city name 
