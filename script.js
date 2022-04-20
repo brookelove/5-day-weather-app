@@ -50,7 +50,7 @@ var searcharea = function (event) {
 
 // getting the search ID API
 var getCitySearch = function (search) {
-    var searchapi = 'http://api.openweathermap.org/data/2.5/weather?q=' + search  + '&units=imperial' +'&appid=23c7703d45af428f792316b5fd0b2f4f';
+    var searchapi = 'https://api.openweathermap.org/data/2.5/weather?q=' + search  + '&units=imperial' +'&appid=23c7703d45af428f792316b5fd0b2f4f';
     // console.log(searchapi)
     fetch(searchapi)
     .then(function (response) {
@@ -62,7 +62,7 @@ var getCitySearch = function (search) {
     var citylatlon = JSON.parse(localStorage.getItem('search')) || []
         citylatlon.push(data.name);
         // console.log(data)
-    var latlonapi = 'http://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon +  '&units=imperial' + '&appid=23c7703d45af428f792316b5fd0b2f4f';
+    var latlonapi = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data.coord.lat + '&lon=' + data.coord.lon +  '&units=imperial' + '&appid=23c7703d45af428f792316b5fd0b2f4f';
     fetch(latlonapi)
         .then(function (response2){
             console.log("response 2")
