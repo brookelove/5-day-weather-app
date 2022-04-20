@@ -18,6 +18,12 @@ console.log("hello world")
 var searchFormEl = document.getElementById('search-area')
 var searchBTN = document.getElementById('search')
 var fiveday = document.getElementById('5dayweathercontainer')
+// adding moment
+    //today
+     var now = document.getElementById('today');
+     now.textContent = moment().format('MMM Do YY');
+     //tomorrow
+     moment()
 
         // getting the search to intake the city 
 var searcharea = function (event) {
@@ -66,7 +72,6 @@ var getCitySearch = function (search) {
             var currenthumidity = document.getElementById('currenthumidity')
             currenthumidity.textContent = "Humidity: " + data.main.humidity + " %"
             var uvi = document.getElementById('currentuvi')
-            var uvi = document.getElementById('currentuvi')
             uvi.textContent = "UV-Index: " + weatherdisplay.current.uvi
 // current icon
              var weathericon1 = document.getElementById('weathericon1')
@@ -75,7 +80,6 @@ var getCitySearch = function (search) {
              var url1 = 'http://openweathermap.org/img/wn/' + icon1 + '@2x.png'
              console.log(url1)
              weathericon1.src = url1
-            //  var weathermoji1 = document.getElementById('weathermoji-1')
              
 //icons 1-5 
         //day1
@@ -114,16 +118,18 @@ var getCitySearch = function (search) {
             console.log(url6)
             weathericon6.src = url6
 //  to make the colors of the UV index appear  green if below 2, yellow between 3 and 5 orage between 6 and 7, red between 7 and 10, purple for above 11
-            // var uvcolor = document.getElementById('currentuvi')
-            // if (uvi < 2 ) {
-            //     uvcolor.addClass('green');
-            // } else if (3 > uvi < 5) {
-            //     uvcolor.addClass('yellow');
-            // } else if (6 > uvi < 7) {
-            //     uvcolor.addClass('orange');
-            // } else if ( 7 > uvi < 10) {
-            //     uvcolor.addClass ('purple')
-            // }
+            uvicolor = weatherdisplay.current.uvi
+             if (uvicolor <= 2 ) {
+                uvi.style.backgroundColor = 'green'
+             } else if (3 <= uvicolor <= 5) {
+                uvi.style.backgroundColor = 'yellow'
+             } else if (6 <= uvicolor <= 7) {
+                uvi.style.backgroundColor = 'orange'
+             } else if ( 7 <= uvicolor <= 10) {
+                uvi.style.backgroundColor = 'red'
+             } else {
+                uvi.style.backgroundColor = 'purple'
+             }
 
 // 5 day forcast ====================================================================
 // figure out how to get the icons to display
