@@ -121,11 +121,11 @@ var getCitySearch = function (search) {
             uvicolor = weatherdisplay.current.uvi
              if (uvicolor <= 2 ) {
                 uvi.style.backgroundColor = 'green'
-             } else if (3 <= uvicolor <= 5) {
+             } else if (uvicolor >= 3 && uvicolor <= 5) {
                 uvi.style.backgroundColor = 'yellow'
-             } else if (6 <= uvicolor <= 7) {
+             } else if (uvicolor >= 6 && uvicolor <= 7) {
                 uvi.style.backgroundColor = 'orange'
-             } else if ( 7 <= uvicolor <= 10) {
+             } else if ( 7 >= uvicolor && uvicolor <= 10) {
                 uvi.style.backgroundColor = 'red'
              } else {
                 uvi.style.backgroundColor = 'purple'
